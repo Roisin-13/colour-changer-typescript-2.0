@@ -1,19 +1,21 @@
-import React from 'react';
+import * as React from 'react';
 import './App.css';
 import { useState } from 'react';
 
+const white: string = "#ffffff"
+
 const App = () => {
 
-  const [colour, setColour] = useState("#ffffff");
+  const [colour, setColour] = useState<string>(white);
   document.body.style.background = colour;
 
   //--------
-  const randNum = () => {
-    let hexArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+  const randNum = (): string => {
+    let hexArray: string[] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
     return hexArray[Math.floor(Math.random() * hexArray.length)];
   };
 
-  const getColour = () => {
+  const getColour = (): string => {
     let hex = "#" + randNum() + randNum() + randNum() + randNum() + randNum() + randNum();
     return hex;
 
@@ -21,7 +23,7 @@ const App = () => {
 
   //----------------------------
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     setColour(getColour);
   }
 
