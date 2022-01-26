@@ -1,0 +1,35 @@
+@mixin marginAuto {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+#app {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    .colourBox {
+        @include marginAuto;
+        color: black;
+        height: 50px;
+        width: 200px;
+        margin-top: 100px;
+        padding: 5px;
+    }
+}
+
+button {
+    @include marginAuto;
+	margin-top: 100px;
+	padding: 10px;
+	color: Gainsboro;
+	background-color: DimGray;
+	border-radius: 15%;
+}

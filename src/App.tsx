@@ -23,7 +23,7 @@ const App = () => {
 
   //----------------------------
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleClick = (): void => {
     setColour(getColour);
   }
 
